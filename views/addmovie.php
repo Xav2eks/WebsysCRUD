@@ -52,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <input type="text" id="reviews" name="reviews" required>
                 </div>
 
-                <input type="submit" value="Create Movie" class="submit-button">
+                <input type="submit" value="Add Movie" class="submit-button">
             </div>
         </form>
         <h2><a href="display.php">Back to Movie List</a></h2>
