@@ -4,7 +4,7 @@ return [
     'HOST' => 'localhost',
     'USERNAME' => 'root',
     'PASSWORD' => '',
-    'DATABASE' => 'test'
+    'DATABASE' => 'websystest'
 ];
 
 

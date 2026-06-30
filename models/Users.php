@@ -8,22 +8,17 @@ class Users {
         $this->db = $db;
     }
 
-    public function getAllUsers() {
-        $query = "SELECT * FROM users";
-        
-        $result = $this->db->getConnection()->query($query);
-
-        if ($result && $result->num_rows > 0) {
-            return $result->fetch_all(MYSQLI_ASSOC);
-        } else {
-            return [];          
-        }
+    public function createUser($firstname, $lastname, $username, $password, $role, $status) {
+        $query = "INSERT INTO users (firstname, lastname, username, password, role, status) VALUES (?, ?, ?, ?, ?, ?)";
+        $stmt = $this->db->getConnection()->prepare($query);
+        $stmt->bind_param("ssssss", $firstname, $lastname, $username, $password, $role, $status);
+        return $stmt->execute();
     }
 
-    public function getUserById($id) {
-        $query = "SELECT * FROM users WHERE id = ?";
+    public function getUserByUsername($username) {
+        $query = "SELECT * FROM users WHERE username = ?";
         $stmt = $this->db->getConnection()->prepare($query);
-        $stmt->bind_param("i", $id);
+        $stmt->bind_param("s", $username);
         $stmt->execute();
         $result = $stmt->get_result();
 
@@ -32,20 +27,6 @@ class Users {
         } else {
             return null;
         }
-    }
-
-    public function updateUser($id, $name, $role, $status) {
-        $query = "UPDATE users SET name = ?, role = ?, status = ? WHERE id = ?";
-        $stmt = $this->db->getConnection()->prepare($query);
-        $stmt->bind_param("sssi", $name, $role, $status, $id);
-        return $stmt->execute();
-    }
-
-    public function createUser($name, $role, $status) {
-        $query = "INSERT INTO users (name, role, status) VALUES (?, ?, ?)";
-        $stmt = $this->db->getConnection()->prepare($query);
-        $stmt->bind_param("sss", $name, $role, $status);
-        return $stmt->execute();
     }
 
 }

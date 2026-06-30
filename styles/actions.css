@@ -1,0 +1,119 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f3f4f6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.main-container {
+  background-color: #ffffff;
+  padding: 32px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  max-width: 460px;
+  box-sizing: border-box;
+}
+
+h1 {
+  margin-top: 0;
+  margin-bottom: 24px;
+  color: #1f2937;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+h2 {
+  margin-top: 24px;
+  margin-bottom: 0;
+  font-size: 15px;
+  text-align: center;
+}
+
+h2 a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+h2 a:hover {
+  text-decoration: underline;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #4b5563;
+}
+
+.form-group input[type="text"] {
+  padding: 10px 14px;
+  font-size: 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+  color: #111827;
+  background-color: #f9fafb;
+  transition: all 0.2s ease-in-out;
+}
+
+.form-group input[type="text"]:focus {
+  border-color: #4caf50;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.15);
+}
+
+.submit-button {
+  margin-top: 6px;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.15s ease-in-out;
+}
+
+.submit-button:hover {
+  background-color: #439a46;
+}
+
+.submit-button:active {
+  background-color: #38853b;
+}
+
+p {
+  color: #dc2626;
+  text-align: center;
+  font-weight: 600;
+  background-color: #fee2e2;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 14px;
+}
